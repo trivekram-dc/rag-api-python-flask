@@ -1,4 +1,4 @@
-## Lab: Build a Flask RAG API Endpoint
+# Lab: Build a Flask RAG API Endpoint
 
 ## Overview
 

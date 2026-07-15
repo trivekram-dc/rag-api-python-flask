@@ -45,3 +45,6 @@ def validate_question_request_data(request_data):
         }
 
     return question, None
+
+# Backward-compatible alias expected by app/tests
+validate_question_payload = validate_question_request_data

@@ -1,26 +1,26 @@
 MIN_QUESTION_LENGTH = 3
 
 
-def validate_question_payload(request_data):
+def validate_question_request_data(request_data):
     """Validate the JSON body for POST /api/ask.
 
     Return:
         (question, None) when valid
         (None, error_dict) when invalid
     """
-    if not isinstance(payload, dict):
+    if not isinstance(request_data, dict):
         return None, {
             "error": "invalid_request",
             "message": "Request body must be a JSON object with a question field.",
         }
 
-    if "question" not in payload:
+    if "question" not in request_data:
         return None, {
             "error": "missing_question",
             "message": "Request body must include a question field.",
         }
 
-    question = payload["question"]
+    question = request_data["question"]
 
     if not isinstance(question, str):
         return None, {
